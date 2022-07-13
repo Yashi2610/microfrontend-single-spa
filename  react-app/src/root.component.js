@@ -6,6 +6,7 @@ import CardPage from "./component/card/home";
 import { Header } from "./component/header/header";
 import Cart from "./component/cart/cart";
 import { Card } from "./component/card/card";
+import {Login} from './component/login/login'
 
 
 export default function Root() {
@@ -25,10 +26,9 @@ export default function Root() {
 
     //<Card></Card>
     <>
-    {/* <Header/> */}
-    {/* <Home handleClick={handleClick} /> */}
-    {/* <Cart cart={cart} setCart={setCart} handleChange={handleChange} /> */}
+   
     <Card/>
+    {/* <Login/> */}
      </>
   );
 
