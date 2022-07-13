@@ -1,7 +1,8 @@
-import Card from "./card.component";
+
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./cardPage.css";
+import "./card-page.css";
+import CardPage from './card-page'
 import img1 from "./thrones.jpg";
 
 import img2 from "./fire.jpg";
@@ -17,7 +18,7 @@ import img6 from "./door.jpg";
 import img7 from "./author.jpg";
 import img8 from "./stephan.jpg";
 
-export default function CardPage({ handleClick }) {
+export default function Home({ handleClick }) {
   const books = [
     {
       id: 1,
@@ -98,7 +99,7 @@ export default function CardPage({ handleClick }) {
       <div className="container">
         <section className="container-fluid ">
           {books.map((item) => (
-            <Card key={item.id} item={item} handleClick={handleClick} />
+            <CardPage key={item.id} item={item} handleClick={handleClick} />
           ))}
         </section>
       </div>
