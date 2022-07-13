@@ -1,10 +1,35 @@
-export default function Root(props) {
+import { useState } from "react";
+
+
+
+import CardPage from "./component/card/home";
+import { Header } from "./component/header/header";
+import Cart from "./component/cart/cart";
+import { Card } from "./component/card/card";
+import {Login} from './component/login/login'
+
+
+export default function Root() {
+
+  
+
 
   return (
-  <section>{props.name} is mounted!
-   <br/>
-    <a href="/angular">Go To angular app</a>
-  </section>
+
+    // <section>{props.name} is mounted!
+
+    //  <br/>
+
+    //   <a href="/angular">Go To  app</a>
+
+    // </section>
+
+    //<Card></Card>
+    <>
+   
+    <Card/>
+    {/* <Login/> */}
+     </>
   );
- 
+
 }
