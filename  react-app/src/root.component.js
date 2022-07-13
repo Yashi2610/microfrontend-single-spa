@@ -9,6 +9,7 @@ import { Card } from "./component/card/card";
 import {Login} from './component/login/login'
 
 
+
 export default function Root() {
 
   
@@ -28,7 +29,7 @@ export default function Root() {
     <>
    
     <Card/>
-    {/* <Login/> */}
+    <Login/>
      </>
   );
 

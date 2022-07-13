@@ -42,7 +42,7 @@ export function Login() {
         <div className="col-12 col-md-5 col-lg-5 py-3 px-3">
           <div className="card shadow">
             <form className="loginform" onSubmit={submitHandler}>
-              <h2 className="text-start p-2 title">Login</h2>
+              <h2 className="text-start p-2 underline">Login</h2>
               <div className="input_div">
                 <label htmlFor="exampleInputEmail1">Email</label>
                 <input
