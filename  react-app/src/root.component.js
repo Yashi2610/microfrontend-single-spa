@@ -2,24 +2,15 @@ import { useState } from "react";
 
 
 
-import CardPage from "./component/cardPage.component";
-
+import CardPage from "./component/card/home";
+import { Header } from "./component/header/header";
+import Cart from "./component/cart/cart";
+import { Card } from "./component/card/card";
 
 
 export default function Root() {
 
-  const [cart, setCart] = useState([]);
-
-
-
-  const handleClick = (item) => {
-
-    if (cart.indexOf(item) !== -1) return;
-
-    setCart([...cart, item]);
-
-  };
-
+  
 
 
   return (
@@ -33,9 +24,12 @@ export default function Root() {
     // </section>
 
     //<Card></Card>
-
-    <CardPage handleClick={handleClick} />
-
+    <>
+    {/* <Header/> */}
+    {/* <Home handleClick={handleClick} /> */}
+    {/* <Cart cart={cart} setCart={setCart} handleChange={handleChange} /> */}
+    <Card/>
+     </>
   );
 
 }
