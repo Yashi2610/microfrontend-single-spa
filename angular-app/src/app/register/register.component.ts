@@ -5,6 +5,14 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import {
+  Auth,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from '@angular/fire/auth';
+
+import { Database, set, ref, update } from '@angular/fire/database';
 
 @Component({
   selector: 'app-register',
@@ -14,6 +22,7 @@ import {
     '../../../node_modules/bootstrap/dist/css/bootstrap.min.css',
   ],
 })
+
 export class RegisterComponent implements OnInit {
   email: string = '';
   password: string = '';
@@ -22,8 +31,16 @@ export class RegisterComponent implements OnInit {
   dob: string = '';
   registerForm!: FormGroup;
   submitted: boolean = false;
+  gender:any='';
+  constructor(
 
-  constructor(private fb: FormBuilder) {}
+    private fb: FormBuilder,
+
+    public auth: Auth,
+
+    public database: Database
+
+  ) {}
 
   ngOnInit(): void {
     this.registerForm = this.fb.group({
@@ -43,6 +60,49 @@ export class RegisterComponent implements OnInit {
 
   submit() {
     this.submitted = true;
-    console.log(this.registerForm);
+
+    const { name, email, dob, city, gender, password } =
+      this.registerForm.value;
+
+    createUserWithEmailAndPassword(this.auth, email, password)
+      .then(async (res) => {
+        // Signed in
+
+        const user = res.user;
+
+        await updateProfile(user, {
+          // displayName: value.username,
+
+          displayName: name,
+        });
+
+        set(ref(this.database, 'users/' + name), {
+          Username: name,
+
+          Email: email,
+
+          Password: password,
+
+          City: city,
+
+          Gender: gender,
+
+          DOB: dob,
+        });
+
+        alert('user created! ');
+      })
+
+      .catch((error) => {
+        const errorCode = error.code;
+
+        const errorMessage = error.message;
+
+        alert(errorMessage);
+      });
+
+    console.log(this.registerForm.value);
+
+    console.log(name);
   }
 }

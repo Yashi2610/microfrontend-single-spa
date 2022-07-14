@@ -1,22 +1,60 @@
 import React, { useState } from "react";
 import "./login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+
+import { auth } from "./firebase";
 
 export function Login() {
   const initialValues = { email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
+  const navigate = useNavigate();
+  
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
+  // const submitHandler = (event) => {
+  //   event.preventDefault();
+  //   signInWithEmailAndPassword(auth, formValues.email, formValues.password)
+
+  //     .then(async (res) => {
+
+  //       alert("Login successful");
+
+  //        navigate("/card");
+
+  //     })
+
+  //     .catch((err) => {
+
+  //       alert(err.message);
+
+  //     });
+  //   setFormErrors(validate(formValues));
+  //   // navigate('/card')
+  // };
   const submitHandler = (event) => {
     event.preventDefault();
-    setFormErrors(validate(formValues));
-  };
 
+    // console.log(formValues.email,formValues.password)
+
+    signInWithEmailAndPassword(auth, formValues.email, formValues.password)
+      .then(async (res) => {
+        alert("Login successful");
+        setFormErrors(validate(formValues));
+
+        navigate("/card");
+      })
+
+      .catch((err) => {
+        alert(err.message);
+      });
+  };
   const validate = (values) => {
     const errors = {};
 
