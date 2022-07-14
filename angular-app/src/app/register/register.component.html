@@ -1,0 +1,176 @@
+<div id="container-width" class="register container-fluid">
+  <div class="row mt-5">
+    <div class="col"></div>
+    <div class="col-4">
+      <div class="card shadow">
+        <div class="card-body">
+          <form class="formDemo" [formGroup]="registerForm">
+            <div class="mb-3 text-center">
+              <h4 class="text-dark text-muted">REGISTRATION</h4>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="exampleInputName" class="form-label"
+                  >User Name</label
+                >
+                <span style="color: red">&#42;</span>
+                <input
+                  type="text"
+                  required
+                  class="form-control"
+                  name="name"
+                  formControlName="name"
+                  placeholder="Enter User Name"
+                />
+                <span
+                  style="color: red"
+                  *ngIf="(registerFormControl['name'].touched || submitted) && registerFormControl['name'].errors?.['required']"
+                >
+                  Name is required
+                </span>
+              </div>
+              <div class="col">
+                <label for="exampleInputEmail1" class="form-label">Email</label
+                ><span style="color: red">&#42;</span>
+                <input
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  formControlName="email"
+                  placeholder="Enter Your Email"
+                />
+                <span
+                  style="color: red"
+                  *ngIf="(registerFormControl['email'].touched || submitted) && registerFormControl['email'].errors?.['required']"
+                >
+                  Email is required
+                </span>
+              </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+              <div class="col">
+                <label for="exampleInputdob" class="form-label">DOB</label
+                ><span style="color: red">&#42;</span>
+                <input
+                  type="date"
+                  class="form-control"
+                  name="dob"
+                  formControlName="dob"
+                />
+                <span
+                  style="color: red"
+                  *ngIf="(registerFormControl['dob'].touched || submitted) && registerFormControl['dob'].errors?.['required']"
+                >
+                  DOB is required
+                </span>
+              </div>
+              <div class="col">
+                <label for="exampleInputcity" class="form-label">City</label
+                ><span style="color: red">&#42;</span>
+                <select
+                  class="selectpicker selectDemo"
+                  formControlName="city"
+                  name="Select"
+                >
+                  <option>Select</option>
+                  <option value="P">Pune</option>
+                  <option value="M">Mumbai</option>
+                  <option value="I">Indore</option>
+                </select>
+                <span
+                  style="color: red"
+                  *ngIf="(registerFormControl['city'].touched || submitted) && registerFormControl['city'].errors?.['required']"
+                >
+                  City is required
+                </span>
+              </div>
+            </div>
+
+            <br />
+            <form>
+              Gender<span style="color: red">&#42;</span><br />
+              <input
+                type="radio"
+                ng-model="myVar"
+                value="male"
+                formControlName="gender"
+              />Male
+              <input
+                type="radio"
+                ng-model="myVar"
+                value="female"
+                formControlName="gender"
+              />Female
+              <input
+                type="radio"
+                ng-model="myVar"
+                value="other"
+                formControlName="gender"
+              />Other
+
+              <span
+                style="color: red"
+                *ngIf="(registerFormControl['gender'].touched || submitted) && registerFormControl['gender'].errors?.['required']"
+              >
+                Gender is required
+              </span>
+            </form>
+            <br />
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+              ><span style="color: red">&#42;</span>
+              <input
+                type="password"
+                class="form-control pwd"
+                name="password"
+                formControlName="password"
+                placeholder="Enter Password"
+              />
+              <span
+                style="color: red"
+                *ngIf="(registerFormControl['password'].touched || submitted) && registerFormControl['password'].errors?.['required']"
+              >
+                Password is required
+              </span>
+            </div>
+
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+                formControlName="acceptance"
+              />
+              <label class="form-check-label" for="flexCheckDefault">
+                I here by declare that all the information provided are true to
+                my knowledge.
+              </label>
+            </div>
+
+            <br />
+            <div class="row">
+              <div class="col-md-6">
+                <span>If you already have an account please click on</span
+                ><a href="/" style="text-decoration: none"> LOGIN</a>
+              </div>
+            </div>
+
+            <br />
+            <div class="text-center">
+              <button type="button" class="btn btn-info" (click)="submit()">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col"></div>
+  </div>
+</div>

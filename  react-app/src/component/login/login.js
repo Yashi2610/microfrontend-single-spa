@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import "./login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import {  useNavigate } from 'react-router-dom';
 
 export function Login() {
   const initialValues = { email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
+  const navigate= useNavigate();
+  const [submit, isSubmit] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,6 +18,7 @@ export function Login() {
   const submitHandler = (event) => {
     event.preventDefault();
     setFormErrors(validate(formValues));
+    // navigate('/card')
   };
 
   const validate = (values) => {
@@ -32,6 +36,15 @@ export function Login() {
     } else if (values.password.length < 4 || values.password.length > 10) {
       errors.password =
         "**password must be greater than 4 characters and less than 10 characters";
+    }
+    if (values.email === 'test@gmail.com' && values.password === 'test123') {
+
+      isSubmit(true);
+
+     
+
+
+
     }
 
     return errors;
