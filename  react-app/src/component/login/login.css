@@ -11,10 +11,10 @@
   border-radius: 10px;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
 }
-.title {
+.underline {
   position: relative;
 }
-.title::before {
+.underline::before {
   position: absolute;
   content: "";
   height: 4px;

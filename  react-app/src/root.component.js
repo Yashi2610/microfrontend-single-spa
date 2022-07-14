@@ -6,6 +6,7 @@ import Cart from "./component/cart/cart";
 import { Card } from "./component/card/card";
 import { Login } from "./component/login/login";
 
+
 export default function Root() {
   return (
     // <section>{props.name} is mounted!
