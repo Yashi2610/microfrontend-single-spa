@@ -1,25 +1,36 @@
-.main{
-  background-color: pink;
+.main {
+  background-color: rgb(155, 212, 235);
+  
+  align-items: center;
 }
-
 .register {
   width: 50% !important;
+
   
-background-color:  rgb(155, 212, 235);
 }
 
-.selectDemo {
-  width: 100%;
-  height: 30px;
-}
+
 
 .pwd {
-  width: 80% !important;
+  width: 40% !important;
 }
 
 .formDemo {
   padding-bottom: 10px;
-  padding-left: 40px;
-  padding-right: 40px;
+  
   padding-top: 10px;
 }
+
+@media screen and (max-width: 570px) {
+  .register {
+    width: 60% !important;
+  }
+}
+
+
+@media screen and (min-device-width: 320px) and (max-device-width: 800px) {
+  .row {
+    display: inline-block !important;
+  }
+}
+
