@@ -9,11 +9,14 @@ import { Header } from '../header/header';
 import Home from './home';
 
 import Cart from '../cart/cart';
+import { useUserAuth } from '../login/userAuthControl';
 
 export function Card() {
   const [show, setShow] = useState(true);
 
   const [cart, setCart] = useState([]);
+  const {user} = useUserAuth();
+  console.log(user)
 
   const handleClick = (item) => {
     console.log('item',item,cart)

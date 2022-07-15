@@ -24,7 +24,7 @@ const Cart = ({ cart, setCart, handleChange }) => {
   });
 
   return (
-    <div className="container ">
+    <div className="container">
       <article>
         {cart.map((item) => (
           <div key={item.id} className="cart_box">
@@ -34,6 +34,25 @@ const Cart = ({ cart, setCart, handleChange }) => {
               </div>
               <div className="col-sm-4 ">
                 <span className="fw-bold">{item.title}</span>
+              </div>
+              <div className="col-sm-3 ">
+                <button
+                  className="btn btn-info btn-sm"
+                  onClick={() => handleChange(item, -1)}
+                >
+                  -
+                </button>
+
+                <button className="btn btn-info btn-sm ms-2 me-2">
+                  {item.amount}
+                </button>
+
+                <button
+                  className="btn btn-info btn-sm"
+                  onClick={() => handleChange(item, +1)}
+                >
+                  +
+                </button>
               </div>
 
               <div className="col-sm-2 ">

@@ -4,57 +4,44 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
+
 import { auth } from "./firebase";
+import { useUserAuth } from "./userAuthControl";
 
 export function Login() {
   const initialValues = { email: "", password: "" };
   const [formValues, setFormValues] = useState(initialValues);
   const [formErrors, setFormErrors] = useState({});
   const navigate = useNavigate();
-  
+  const { login } = useUserAuth();
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
-  // const submitHandler = (event) => {
-  //   event.preventDefault();
-  //   signInWithEmailAndPassword(auth, formValues.email, formValues.password)
 
-  //     .then(async (res) => {
+  const submitHandler = async (e) => {
+    setFormErrors(validate(formValues));
+    e.preventDefault();
+    if (formValues.email && formValues.password) {
+      try {
 
-  //       alert("Login successful");
-
-  //        navigate("/card");
-
-  //     })
-
-  //     .catch((err) => {
-
-  //       alert(err.message);
-
-  //     });
-  //   setFormErrors(validate(formValues));
-  //   // navigate('/card')
-  // };
-  const submitHandler = (event) => {
-    event.preventDefault();
-
-    // console.log(formValues.email,formValues.password)
-
-    signInWithEmailAndPassword(auth, formValues.email, formValues.password)
-      .then(async (res) => {
-        alert("Login successful");
-        setFormErrors(validate(formValues));
+        await login(formValues.email, formValues.password);
 
         navigate("/card");
-      })
 
-      .catch((err) => {
-        alert(err.message);
-      });
+      } catch (err) {
+        
+        setFormErrors({ password: " password is incorrect" });
+
+      }
+    }
+
   };
+
+
   const validate = (values) => {
     const errors = {};
 
@@ -67,9 +54,13 @@ export function Login() {
 
     if (!values.password) {
       errors.password = "**Password is Required";
-    } else if (values.password.length < 4 || values.password.length > 10) {
+    }
+    //  else if (values.password.length < 4 || values.password.length > 10) {
+    //   errors.password =
+    //     "**password must be greater than 4 characters and less than 10 characters";
+    else if (values.password !== formValues.password) {
       errors.password =
-        "**password must be greater than 4 characters and less than 10 characters";
+        "**password is incorrect";
     }
 
     return errors;
@@ -83,6 +74,7 @@ export function Login() {
               <h2 className="text-start p-2 underline">Login</h2>
               <div className="input_div">
                 <label htmlFor="exampleInputEmail1">Email</label>
+                <span style={{color: "red"}}>&#42;</span>
                 <input
                   type="email"
                   className="input-box p-2"
@@ -97,6 +89,7 @@ export function Login() {
 
               <div className="input_div">
                 <label htmlFor="exampleInputPassword1">Password</label>
+                <span style={{color: "red"}}>&#42;</span>
                 <input
                   type="password"
                   className="input-box p-2"
