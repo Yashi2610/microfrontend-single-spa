@@ -1,8 +1,4 @@
-* {
-    margin: 0;
-  
-    padding: 0;
-  }
+
   
   section {
     margin: auto;
@@ -14,6 +10,12 @@
     grid-template-columns: repeat(4, 1fr);
   
     grid-template-rows: auto;
+    /* width: 90% !important; */
+
+
+
+
+/* width: 90% !important; */
   }
   .container{
 
@@ -21,9 +23,9 @@
   
   }
   .cards {
-    width: 14.625rem;
+    width: 13rem;
   
-    padding: 1.25rem;
+    padding: 0.75rem;
   
     box-shadow: 5px 10px 18px #888888;
   
@@ -35,7 +37,7 @@
   .title {
     margin-top: 1px;
   
-    margin-bottom: 0.6rem;
+    margin-bottom: 0;
   }
   
   .cards:hover {
@@ -49,9 +51,9 @@
   }
   
   .image_box img {
-    width: 9.375rem;
+    width: 8.375rem;
   
-    height: 12.5rem;
+    height: 11.5rem;
   
     border-radius: 3px;
   }
@@ -97,7 +99,9 @@
   
     font-weight: bold;
   
-    background-color: skyblue;
+    background-color: #425eab;
+
+    color: white;
   
     outline: none;
   
@@ -107,7 +111,7 @@
   }
   
   button:hover {
-    background-color: rgb(155, 212, 235);
+    background-color: rgb(90, 193, 234)
   }
   @media (max-width: 1100px) {
     section {

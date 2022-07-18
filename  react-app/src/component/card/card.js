@@ -9,6 +9,7 @@ import { Header } from '../header/header';
 import Home from './home';
 
 import Cart from '../cart/cart';
+// import Footer from '../footer/footer';
 import { useUserAuth } from '../login/userAuthControl';
 
 export function Card() {
@@ -52,10 +53,15 @@ export function Card() {
       <Header setShow={setShow} size={cart.length} />
 
       {show ? (
+        <div>
+          
         <Home handleClick={handleClick} />
+        {/* <Footer/> */}
+        </div>
       ) : (
         <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
       )}
+      
     </div>
   );
 }

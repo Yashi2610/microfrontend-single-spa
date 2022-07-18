@@ -68,7 +68,7 @@ export function Login() {
   return (
     <div className="container-fluid main">
       <div className="row justify-content-center align-items-center mx-auto shadow main_div">
-        <div className="col-12 col-md-5 col-lg-5 py-3 px-3">
+      <div className="col-12 col-sm-8 col-md-6 col-lg-4 py-3 px-3">
           <div className="card shadow">
             <form className="loginform" onSubmit={submitHandler}>
               <h2 className="text-start p-2 underline">Login</h2>
@@ -77,7 +77,7 @@ export function Login() {
                 <span style={{color: "red"}}>&#42;</span>
                 <input
                   type="email"
-                  className="input-box p-2"
+                  className="form-control"
                   id="exampleInputEmail1"
                   placeholder="Enter Your Email"
                   name="email"
@@ -92,7 +92,7 @@ export function Login() {
                 <span style={{color: "red"}}>&#42;</span>
                 <input
                   type="password"
-                  className="input-box p-2"
+                  className="form-control"
                   id="exampleInputPassword1"
                   name="password"
                   value={formValues.password}

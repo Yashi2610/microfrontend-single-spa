@@ -45,7 +45,7 @@ export function Header({ setShow, size }) {
         <label htmlFor="click" className="menu-btn">
           <GiHamburgerMenu
             className="menuicon"
-            color="skyblue"
+            color="whitesmoke"
           ></GiHamburgerMenu>
         </label>
 
@@ -53,7 +53,7 @@ export function Header({ setShow, size }) {
           <li>
             <a href="#">
               <AiFillHome
-                color="skyblue"
+                color="whitesmoke"
                 size={30}
                 onClick={() => setShow(true)}
               ></AiFillHome>
@@ -64,21 +64,31 @@ export function Header({ setShow, size }) {
             <a href="#">
               <FaShoppingCart
                 className="me-2"
-                color="skyblue"
+                color="whitesmoke"
                 size={30}
                 onClick={() => setShow(false)}
               ></FaShoppingCart>
 
-              <span className="cartui me-5">{size}</span>
+              <span className="">{size}</span>
             </a>
           </li>
-          <div className="action">
+          
+            <div className="action">
             <div className="profile">
-              <FaUser color="skyBlue" size={30} onClick={menuToggle}></FaUser>
-            </div>
+               <li>
+                <a href='#'>
+
+                  
+               <FaUser color="whitesmoke" size={30} onClick={menuToggle}></FaUser>
+               </a>
+             </li>
+                </div>
+              
 
             <div className="menu">
               <h3>{user && user.email}</h3>
+
+             
 
               {/* <h3>{user.displayName}</h3> */}
 
@@ -88,7 +98,7 @@ export function Header({ setShow, size }) {
                     <span onClick={handleLogout}>Logout</span>
 
                     <BiLogOut
-                      color="skyBlue"
+                      color="whitesmoke"
                       size={30}
                       onClick={handleLogout}
                     ></BiLogOut>

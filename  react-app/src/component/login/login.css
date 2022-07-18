@@ -43,6 +43,7 @@ p {
 }
 .loginbutton {
   font-size: 20px !important;
-  background-color: rgb(155, 212, 235) !important;
+  background-color: #425eab !important;
   font-weight: 600 !important;
+  color: white;
 }
