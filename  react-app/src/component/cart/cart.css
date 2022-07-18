@@ -44,6 +44,10 @@ article {
 
   border-radius: 5px;
 }
+.add{
+  background-color:#425eab;
+  color: white;
+}
 
 .total {
   display: flex;
@@ -55,7 +59,7 @@ article {
 .total span:nth-child(1) {
   font-size: 1.5rem;
 
-  color: skyblue;
+  color: #425eab;
 
   font-weight: bold;
 }

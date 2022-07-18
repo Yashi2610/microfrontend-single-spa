@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col"></div>
       <div class="col-4">
-        <div class="card shadow mb-5 mt-5">
+        <div class="card shadow mb-4 mt-4">
           <div class="card-body">
             <form class="formDemo" [formGroup]="registerForm">
               <div class="mb-3 text-center">
@@ -11,10 +11,10 @@
               </div>
               <div class="row">
                 <div class="col box">
-                  <label for="exampleInputName" class="form-label"
+                  <label for="exampleInputName" 
                     >User Name</label
                   >
-                  <span class = "text-danger error">&#42;</span>
+                  <span  style="color: #d14343;font-size: 12px;">&#42;</span>
                   <input
                     type="text"
                     required
@@ -24,16 +24,16 @@
                     placeholder="Enter User Name"
                   />
                   <span
-                    class = "text-danger error"
+                     style="color: #d14343;font-size: 12px;"
                     *ngIf="(registerFormControl['name'].touched || submitted) && registerFormControl['name'].errors?.['required']"
                   >
-                    Name is required
+                    **Name is required
                   </span>
                 </div>
                 <div class="col box">
-                  <label for="exampleInputEmail1" class="form-label"
+                  <label for="exampleInputEmail1" 
                     >Email</label
-                  ><span class = "text-danger error">&#42;</span>
+                  ><span  style="color: #d14343;font-size: 12px;">&#42;</span>
                   <input
                     type="email"
                     class="form-control"
@@ -42,18 +42,18 @@
                     placeholder="Enter Your Email"
                   />
                   <span
-                    class = "text-danger error"
+                     style="color: #d14343;font-size: 12px;"
                     *ngIf="(registerFormControl['email'].touched || submitted) && registerFormControl['email'].errors?.['required']"
                   >
-                    Email is required
+                    **Email is required
                   </span>
                 </div>
               </div>
 
               <div class="row">
                 <div class="col box">
-                  <label for="exampleInputdob" class="form-label">DOB</label
-                  ><span class = "text-danger error">&#42;</span>
+                  <label for="exampleInputdob" >DOB</label
+                  ><span  style="color: #d14343;font-size: 12px;">&#42;</span>
                   <input
                     type="date"
                     class="form-control"
@@ -61,15 +61,15 @@
                     formControlName="dob"
                   />
                   <span
-                    class = "text-danger error"
+                     style="color: #d14343;font-size: 12px;"
                     *ngIf="(registerFormControl['dob'].touched || submitted) && registerFormControl['dob'].errors?.['required']"
                   >
-                    DOB is required
+                    **DOB is required
                   </span>
                 </div>
                 <div class="col box">
-                  <label for="exampleInputcity" class="form-label">City</label
-                  ><span class = "text-danger error">&#42;</span>
+                  <label for="exampleInputcity" >City</label
+                  ><span  style="color: #d14343;font-size: 12px;">&#42;</span>
                   <select
                     class="selectpicker form-control"
                     formControlName="city"
@@ -77,22 +77,22 @@
                     placeholder="Enter Your City"
                   >
                     <option>Select</option>
-                    <option value="Pune">Pune</option>
-                    <option value="Mumbai">Mumbai</option>
-                    <option value="Indore">Indore</option>
+                    <option value="P">Pune</option>
+                    <option value="M">Mumbai</option>
+                    <option value="I">Indore</option>
                   </select>
                   <span
-                    class = "text-danger error"
+                     style="color: #d14343;font-size: 12px;"
                     *ngIf="(registerFormControl['city'].touched || submitted) && registerFormControl['city'].errors?.['required']"
                   >
-                    City is required
+                    **City is required
                   </span>
                 </div>
               </div>
 
-              <br />
-              <div class="vGender">
-                Gender<span class = "text-danger error">&#42;</span><br />
+              
+              <div class="vGender ">
+                Gender<span  style="color: #d14343;font-size: 12px;">&#42;</span><br />
                 <input
                   type="radio"
                   ng-model="myVar"
@@ -110,21 +110,22 @@
                   ng-model="myVar"
                   value="other"
                   formControlName="gender"
-                />Other<br/>
-
+                />Other 
+                
                 <span
-                  class = "text-danger error"
+                   style="color: #d14343;font-size: 12px;"
                   *ngIf="(registerFormControl['gender'].touched || submitted) && registerFormControl['gender'].errors?.['required']"
                 >
-                  Gender is required
+                  **Gender is required
                 </span>
               </div>
-              <br />
+              <br/>
+             
 
-              <div class="box">
-                <label for="exampleInputPassword1" class="form-label"
+              <div class=" box">
+                <label for="exampleInputPassword1" 
                   >Password</label
-                ><span class = "text-danger error">&#42;</span>
+                ><span  style="color: #d14343;font-size: 12px;">&#42;</span>
                 <input
                   type="password"
                   class="form-control pwd"
@@ -133,10 +134,10 @@
                   placeholder="Enter Password"
                 />
                 <span
-                  class = "text-danger error"
+                  style="color: #d14343"
                   *ngIf="(registerFormControl['password'].touched || submitted) && registerFormControl['password'].errors?.['required']"
                 >
-                  Password is required
+                  **Password is required
                 </span>
               </div>
 
@@ -164,7 +165,7 @@
 
               <br />
               <div class="text-center">
-                <button type="submit" class="btn loginbutton mb-3" (click)="submit()">
+                <button type="submit" class=" btn w-100 loginbutton mb-3" (click)="submit()">
                   Submit
                 </button>
               </div>
@@ -176,5 +177,4 @@
     </div>
   </div>
 </div>
-
 

@@ -37,18 +37,18 @@ const Cart = ({ cart, setCart, handleChange }) => {
               </div>
               <div className="col-sm-3 ">
                 <button
-                  className="btn btn-info btn-sm"
+                  className="btn btn-sm add" 
                   onClick={() => handleChange(item, -1)}
                 >
                   -
                 </button>
 
-                <button className="btn btn-info btn-sm ms-2 me-2">
+                <button className="btn add btn-sm ms-2 me-2">
                   {item.amount}
                 </button>
 
                 <button
-                  className="btn btn-info btn-sm"
+                  className="btn add btn-sm"
                   onClick={() => handleChange(item, +1)}
                 >
                   +

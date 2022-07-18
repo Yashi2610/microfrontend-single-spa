@@ -9,7 +9,7 @@ import { Header } from '../header/header';
 import Home from './home';
 
 import Cart from '../cart/cart';
-// import Footer from '../footer/footer';
+import Footer from '../footer/footer';
 import { useUserAuth } from '../login/userAuthControl';
 
 export function Card() {
@@ -56,7 +56,7 @@ export function Card() {
         <div>
           
         <Home handleClick={handleClick} />
-        {/* <Footer/> */}
+        <Footer/>
         </div>
       ) : (
         <Cart cart={cart} setCart={setCart} handleChange={handleChange} />
