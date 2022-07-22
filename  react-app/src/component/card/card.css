@@ -71,3 +71,6 @@ p {
 button:hover {
   background-color: rgb(155, 212, 235);
 } */
+::-webkit-scrollbar {
+  display: none;
+}

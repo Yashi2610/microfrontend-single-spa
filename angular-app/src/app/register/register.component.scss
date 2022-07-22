@@ -1,6 +1,6 @@
 .main {
   background-color: #0a205c;
-
+  height:110vh;
   align-items: center;
 }
 .register {
@@ -47,4 +47,10 @@
   .row {
     display: inline-block !important;
   }
+}
+// body{
+//   margin:0px;
+// }
+::-webkit-scrollbar {
+  display: none;
 }
