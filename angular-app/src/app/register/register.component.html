@@ -1,10 +1,11 @@
 <div class="main">
   <div id="" class="container-fluid register">
-    <div class="row">
-      <div class="col"></div>
-      <div class="col-4">
-        <div class="card shadow mb-4 mt-4">
-          <div class="card-body">
+    <div class="row rowheight justify-content-center align-items-center mx-auto ">
+     
+      <div class="col-4  registerform">
+        <div class="card shadow mt-1 
+        ">
+          <div class="card-body ">
             <form class="formDemo" [formGroup]="registerForm">
               <div class="mb-3 text-center">
                 <h4 class="text-dark">REGISTRATION</h4>
@@ -61,65 +62,65 @@
                     style="color: #d14343; font-size: 12px"
                     *ngIf="(registerFormControl['dob'].touched || submitted) && registerFormControl['dob'].errors?.['required']"
                   >
-                    **DOB is required
-                  </span>
-                </div>
-                <div class="col box">
-                  <label for="exampleInputcity">City</label
-                  ><span style="color: #d14343; font-size: 12px">&#42;</span>
-                  <select
-                    class="selectpicker form-control"
-                    formControlName="city"
-                    name="Select"
-                    placeholder="Enter Your City"
-                  >
-                    <option>Select</option>
-                    <option value="P">Pune</option>
-                    <option value="M">Mumbai</option>
-                    <option value="I">Indore</option>
-                  </select>
-                  <span
-                    style="color: #d14343; font-size: 12px"
-                    *ngIf="(registerFormControl['city'].touched || submitted) && registerFormControl['city'].errors?.['required']"
-                  >
-                    **City is required
-                  </span>
-                </div>
-              </div>
-
-              <div class="vGender">
-                Gender<span style="color: #d14343; font-size: 12px">&#42;</span
-                ><br />
-                <input
-                  type="radio"
-                  ng-model="myVar"
-                  value="male"
-                  formControlName="gender"
-                />Male
-                <input
-                  type="radio"
-                  ng-model="myVar"
-                  value="female"
-                  formControlName="gender"
-                />Female
-                <input
-                  type="radio"
-                  ng-model="myVar"
-                  value="other"
-                  formControlName="gender"
-                />Other
-
-                <span
-                  style="color: #d14343; font-size: 12px"
-                  *ngIf="(registerFormControl['gender'].touched || submitted) && registerFormControl['gender'].errors?.['required']"
-                >
-                  **Gender is required
+                  **DOB is required
                 </span>
               </div>
-              <br />
+              <div class="col box">
+                <label for="exampleInputcity">City</label
+                ><span style="color: #d14343; font-size: 12px">&#42;</span>
+                <select
+                  class="selectpicker form-control"
+                  formControlName="city"
+                  name="Select"
+                  placeholder="Enter Your City"
+                >
+                  <option>Select</option>
+                  <option value="Pune">Pune</option>
+                  <option value="Mumbai">Mumbai</option>
+                  <option value="Indore">Indore</option>
+                </select>
+                <span
+                  style="color: #d14343; font-size: 12px"
+                  *ngIf="(registerFormControl['city'].touched || submitted) && registerFormControl['city'].errors?.['required']"
+                >
+                  **City is required
+                </span>
+              </div>
+            </div>
 
-              <div class="box">
-                <label for="exampleInputPassword1">Password</label
+            <div class="vGender">
+              Gender<span style="color: #d14343; font-size: 12px">&#42;</span
+              ><br />
+              <input
+                type="radio"
+                ng-model="myVar"
+                value="male"
+                formControlName="gender"
+              />Male
+              <input
+                type="radio"
+                ng-model="myVar"
+                value="female"
+                formControlName="gender"
+              />Female
+              <input
+                type="radio"
+                ng-model="myVar"
+                value="other"
+                formControlName="gender"
+              />Other
+
+              <span
+                style="color: #d14343; font-size: 12px"
+                *ngIf="(registerFormControl['gender'].touched || submitted) && registerFormControl['gender'].errors?.['required']"
+              >
+                **Gender is required
+              </span>
+            </div>
+            <br />
+
+            <div class="box">
+              <label for="exampleInputPassword1">Password</label
                 ><span style="color: #d14343; font-size: 12px">&#42;</span>
                 <input
                   type="password"
@@ -132,7 +133,7 @@
                   style="color: #d14343"
                   *ngIf="(registerFormControl['password'].touched || submitted) && registerFormControl['password'].errors?.['required']"
                 >
-                  **Password is required
+                **Password is required
                 </span>
               </div>
 
@@ -162,7 +163,7 @@
               <div class="text-center">
                 <button
                   type="submit"
-                  class="btn w-100 loginbutton mb-3"
+                  class="btn w-100 loginbutton mb-2"
                   (click)="submit()"
                 >
                   Submit
@@ -172,7 +173,8 @@
           </div>
         </div>
       </div>
-      <div class="col"></div>
+      
     </div>
+    
   </div>
 </div>
