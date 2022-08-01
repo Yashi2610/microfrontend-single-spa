@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./cart.css";
+import Parcel from "single-spa-react/parcel";
 const Cart = ({ cart, setCart, handleChange }) => {
   const [price, setPrice] = useState(0);
 
@@ -14,11 +15,14 @@ const Cart = ({ cart, setCart, handleChange }) => {
 
   const handlePrice = () => {
     let ans = 0;
-
-    cart.map((item) => (ans += item.amount * item.price));
-
+    let data;
+    cart.map((item) => 
+    {   
+      (ans += item.amount * item.price)});
+sessionStorage.setItem("Data", JSON.stringify(cart));
     setPrice(ans);
   };
+  // sessionStorage.setItem("Data", JSON.stringify(cart));
   useEffect(() => {
     handlePrice();
   });
@@ -78,6 +82,9 @@ const Cart = ({ cart, setCart, handleChange }) => {
           <span>Rs : {price}</span>
         </div>
       </article>
+<Parcel config={() => System.import("@app/vue-micro-app")}/>
+
+
     </div>
   );
 };
