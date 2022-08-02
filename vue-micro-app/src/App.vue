@@ -7,9 +7,9 @@
         type="button"
         class="btn btn-primary"
         data-bs-toggle="modal"
-        style="background:#425eab"
-       
-    
+         style="background:#425eab"
+
+         
         data-bs-target="#exampleModal"
       >
         Order Now
@@ -25,7 +25,7 @@
       aria-hidden="true"
     >
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" style="height:370px">
           <div class="modal-header">
             <h5 class="modal-title text-danger" id="exampleModalLabel">
               Books
@@ -53,18 +53,8 @@
       </tr>
     </table>
     </div>
-    <div v-else>
-     <p>Your cart is empty.</p>
-    </div>
-              <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-warning"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-          </div>
+    
+  <h2 v-else style="text-align: center; padding-top: 20%;">Your cart is empty.</h2>
         </div>
       </div>
     </div>
