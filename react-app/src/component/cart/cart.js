@@ -5,24 +5,23 @@ import Parcel from "single-spa-react/parcel";
 const Cart = ({ cart, setCart, handleChange }) => {
   const [price, setPrice] = useState(0);
 
+  //function for remove item from cart
   const handleRemove = (id) => {
     const arr = cart.filter((item) => item.id !== id);
-
     setCart(arr);
-
     handlePrice();
   };
 
+  //function for total price of cart items
   const handlePrice = () => {
     let ans = 0;
-    let data;
-    cart.map((item) => 
-    {   
-      (ans += item.amount * item.price)});
-sessionStorage.setItem("Data", JSON.stringify(cart));
+    cart.map((item) => {
+      ans += item.amount * item.price;
+    });
+    sessionStorage.setItem("Data", JSON.stringify(cart));
     setPrice(ans);
   };
-  // sessionStorage.setItem("Data", JSON.stringify(cart));
+
   useEffect(() => {
     handlePrice();
   });
@@ -78,13 +77,12 @@ sessionStorage.setItem("Data", JSON.stringify(cart));
 
         <div className="total">
           <span>Total Price of your Cart</span>
-
           <span>Rs : {price}</span>
         </div>
       </article>
-<Parcel config={() => System.import("@app/vue-micro-app")}/>
+      {/* Use Parcel to import vue.js component from vue app in cart (react) component */}
 
-
+      <Parcel config={() => System.import("@app/vue-micro-app")} />
     </div>
   );
 };

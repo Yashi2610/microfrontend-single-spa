@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import "./login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useNavigate } from "react-router-dom";
-import { signInWithEmailAndPassword } from "firebase/auth";
-
-import { auth } from "./firebase";
 import { useUserAuth } from "./userAuthControl";
 
 export function Login() {
@@ -14,11 +11,13 @@ export function Login() {
   const navigate = useNavigate();
   const { login } = useUserAuth();
 
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
   };
 
+  //Form Submit Handler
   const submitHandler = async (e) => {
     setFormErrors(validate(formValues));
     e.preventDefault();
@@ -33,6 +32,7 @@ export function Login() {
     }
   };
 
+  //Frontend Validation
   const validate = (values) => {
     const errors = {};
 
@@ -45,11 +45,7 @@ export function Login() {
 
     if (!values.password) {
       errors.password = "**Password is Required";
-    }
-    //  else if (values.password.length < 4 || values.password.length > 10) {
-    //   errors.password =
-    //     "**password must be greater than 4 characters and less than 10 characters";
-    else if (values.password !== formValues.password) {
+    } else if (values.password !== formValues.password) {
       errors.password = "**password is incorrect";
     }
 
