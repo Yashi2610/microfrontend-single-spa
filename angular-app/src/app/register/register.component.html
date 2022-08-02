@@ -1,3 +1,5 @@
+<!--Registration Form-->
+
 <div class="main">
   <div id="" class="container-fluid register">
     <div class="row rowheight justify-content-center align-items-center mx-auto ">
@@ -5,11 +7,13 @@
       <div class="col-4  registerform">
         <div class="card shadow mt-1 
         ">
+       
           <div class="card-body ">
             <form class="formDemo" [formGroup]="registerForm">
               <div class="mb-3 text-center">
                 <h4 class="text-dark">REGISTRATION</h4>
               </div>
+               <!--InputBox for UserName-->
               <div class="row">
                 <div class="col box">
                   <label for="exampleInputName">User Name</label>
@@ -29,6 +33,7 @@
                     **Name is required
                   </span>
                 </div>
+                <!--InputBox for Email-->
                 <div class="col box">
                   <label for="exampleInputEmail1">Email</label
                   ><span style="color: #d14343; font-size: 12px">&#42;</span>
@@ -47,7 +52,7 @@
                   </span>
                 </div>
               </div>
-
+                <!--InputBox for DOB-->
               <div class="row">
                 <div class="col box">
                   <label for="exampleInputdob">DOB</label
@@ -65,6 +70,7 @@
                   **DOB is required
                 </span>
               </div>
+              <!--InputBox for City-->
               <div class="col box">
                 <label for="exampleInputcity">City</label
                 ><span style="color: #d14343; font-size: 12px">&#42;</span>
@@ -87,6 +93,8 @@
                 </span>
               </div>
             </div>
+
+            <!--DropDown Box-->
 
             <div class="vGender">
               Gender<span style="color: #d14343; font-size: 12px">&#42;</span
@@ -118,7 +126,7 @@
               </span>
             </div>
             <br />
-
+              <!--InputBox for Password-->
             <div class="box">
               <label for="exampleInputPassword1">Password</label
                 ><span style="color: #d14343; font-size: 12px">&#42;</span>
@@ -154,6 +162,7 @@
               <br />
               <div class="row">
                 <div class="col-md-6">
+                  <!--Checkbox for login-->
                   <span>If you already have an account please click on</span
                   ><a href="/" style="text-decoration: none"> LOGIN</a>
                 </div>
