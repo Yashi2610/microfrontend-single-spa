@@ -58,6 +58,11 @@
   @media screen and (min-device-width: 420px) and (max-device-width: 570px) {
     .register {
       width: 75% !important;
+      
+      
+    }
+    .row{
+      padding-right: 24px !important;
     }
   }
   @media (max-width: 800px) {
