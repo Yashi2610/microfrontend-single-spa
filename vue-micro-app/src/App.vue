@@ -1,3 +1,4 @@
+<!--Bootstrap Vue.js Modal -->
 <template>
   <div id="app" class="container p-5">
     <!-- Button trigger modal -->
@@ -75,6 +76,7 @@ export default {
 
   methods: {
   display() {
+     //To display book details
    this.data = JSON.parse(sessionStorage.getItem("Data"))
   }
 }
