@@ -7,6 +7,9 @@
         type="button"
         class="btn btn-primary"
         data-bs-toggle="modal"
+        style="background:#425eab"
+       
+    
         data-bs-target="#exampleModal"
       >
         Order Now
@@ -51,7 +54,7 @@
     </table>
     </div>
     <div v-else>
-  <p>Your cart is empty.</p>
+     <p>Your cart is empty.</p>
     </div>
               <div class="modal-footer">
             <button

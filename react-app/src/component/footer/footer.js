@@ -1,11 +1,9 @@
 import React from "react";
-
 import { AiFillFacebook, AiFillTwitterCircle } from "react-icons/ai";
-
 import { FaInstagramSquare } from "react-icons/fa";
-
 import "./footer.css";
 
+//Function for footer
 const Footer = () => {
   return (
     <>

@@ -9,6 +9,7 @@
     "serve:standalone": "vue-cli-service serve --mode standalone"
   },
   "dependencies": {
+    "@popperjs/core": "^2.11.5",
     "bootstrap": "^5.2.0",
     "core-js": "^3.8.3",
     "single-spa-vue": "^2.1.0",
