@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   bookTitle: any = '';
 
   constructor(private modalService: NgbModal) {}
-
+  // Getting data from session strorage
   ngOnInit(): void {
     this.bookTitle = sessionStorage.getItem('reactData');
   }
@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
 
     this.open(value);
   }
-
+  // modal open and close  function
   open(content: any) {
     this.modalService
       .open(content, { ariaLabelledBy: 'modal-basic-title' })
@@ -39,7 +39,7 @@ export class AppComponent implements OnInit {
         }
       );
   }
-
+// modal close function 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
       return 'by pressing ESC';
