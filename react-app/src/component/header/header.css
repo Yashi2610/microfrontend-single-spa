@@ -9,7 +9,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline:5%;
+  padding-inline: 5%;
 }
 nav .logo {
   font-size: 33px;
